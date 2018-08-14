@@ -1,4 +1,4 @@
-import { takeLatest, put } from "redux-saga/effects";
+import { takeLatest, put, all } from "redux-saga/effects";
 import { GET_PRODUCTS } from "../actionTypes/product";
 import {
   getProductsSuccess,
@@ -16,5 +16,5 @@ function* getProducts() {
 }
 
 export function* productsWatcher() {
-  yield [takeLatest(GET_PRODUCTS, getProducts)];
+  yield all[takeLatest(GET_PRODUCTS, getProducts)];
 }
